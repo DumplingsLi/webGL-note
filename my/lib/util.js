@@ -1,3 +1,25 @@
+function createCanvas() {
+  // https://medium.com/@armno/vscode-and-webgl-development-dfc17bba52ed
+  const canvas = document.createElement("canvas");
+  document.querySelector("body").appendChild(canvas);
+  canvas.width = 400;
+  canvas.height = 400;
+
+  return canvas
+}
+
+function createGL(canvas) {
+  const gl = canvas.getContext("webgl");
+  
+  if (!gl) {
+    alert(
+      "Unable to initialize WebGL. Your browser or machine may not support it."
+    );
+    return;
+  }
+
+  return gl
+}
 /**
  * 初始化着色器程序，让wegGL知道如何绘制数据
  * @param gl webGL 绘图上下文
