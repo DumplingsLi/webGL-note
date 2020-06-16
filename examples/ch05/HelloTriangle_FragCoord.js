@@ -88,6 +88,7 @@ function initVertexBuffers(gl) {
   }
 
   // Pass the width and hight of the <canvas>
+  // 颜色缓冲区的宽高就是canvas的宽高吗？
   gl.uniform1f(u_Width, gl.drawingBufferWidth);
   gl.uniform1f(u_Height, gl.drawingBufferHeight);
 

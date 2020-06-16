@@ -55,7 +55,7 @@ function main() {
   
   tick()
 }
-
+// 调用间隔不固定，没仔细看，不太想看，以后需要的时候再研究
 let g_last = Date.now()
 function animate(angle) {
   const now = Date.now()
@@ -66,8 +66,8 @@ function animate(angle) {
 }
 
 function draw(gl, n, angle, matrix, u_matrix) {
-  
   matrix.setRotate(angle, 0, 0, 1)
+  matrix.translate(0.35, 0,0)
   gl.uniformMatrix4fv(u_matrix, false, matrix.elements)
   
   gl.clear(gl.COLOR_BUFFER_BIT);
